@@ -2,10 +2,10 @@
 
 suffix = "zt"
 port = 53
-interface = "zt0"
+interface = ""
 
 # Number of minutes to wait before updating the DNS database again (Default: 30)
-DBRefresh = 30
+DBRefresh = 1
 
 # This section contains information related to your ZeroTier config
 [ZT]

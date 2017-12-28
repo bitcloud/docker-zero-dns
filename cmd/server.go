@@ -11,7 +11,8 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/uxbh/ztdns/dnssrv"
+	"../dnssrv"
+	// "github.com/uxbh/ztdns/dnssrv"
 	"github.com/uxbh/ztdns/ztapi"
 )
 
@@ -20,7 +21,7 @@ var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "Run ztDNS server",
 	Long: `Server (ztdns server) will start the DNS server.append
-	
+
 	Example: ztdns server`,
 	PreRunE: func(cmd *cobra.Command, args []string) error {
 		// Check config and bail if anything important is missing.

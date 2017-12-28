@@ -39,16 +39,16 @@ func Start(iface string, port int, suffix string, req chan string) error {
 		go func(suffix string, addr net.IP, port int) {
 			var server *dns.Server
 			if addr.To4().String() == addr.String() {
-				log.Debugf("Creating IPv4 Server: %s:%d udp", addr, port)
+				log.Debugf("Creating TCP IPv4 Server: %s:%d udp", addr, port)
 				server = &dns.Server{
 					Addr: fmt.Sprintf("%s:%d", addr, port),
-					Net:  "udp",
+					// Net:  "udp",
 				}
 			} else {
-				log.Debugf("Creating IPv6 Server: [%s]:%d udp6", addr, port)
+				log.Debugf("Creating TCP IPv6 Server: [%s]:%d udp6", addr, port)
 				server = &dns.Server{
 					Addr: fmt.Sprintf("[%s]:%d", addr, port),
-					Net:  "udp6",
+					// Net:  "udp6",
 				}
 			}
 			log.Printf("Starting server for %s on %s", suffix, server.Addr)
